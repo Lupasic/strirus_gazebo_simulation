@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<!-- Body description -->
+	<link name="base_link"/>
+	<joint name="base_link_body_1_part_fixed" type="fixed">
+		<parent link="base_link"/>
+		<child link="body_1_part"/>
+	</joint>
+	<!-- /////////////// -->
+
+
+	<xacro:macro name="full_body" params="omni_deg">
+		<!-- omni_deg in DEG!! not  in rad -->
+		<!--body 1 part -->
+		<link name="body_1_part">
+			<inertial>
+				<mass value="2.388930632"/>
+				<xacro:if value="${ omni_deg == 0 }">
+					<origin rpy="0  0  0" xyz="0.096209300 -0.000003507 0.022606835"/>
+					<inertia 
+						ixx="0.018248647"  ixy="-0.000001894"  ixz="0.005332903" 
+						iyy="0.039560094" iyz="0.000000025" 
+						izz="0.054375295" />
+				</xacro:if>
+				<xacro:if value="${ omni_deg == 15 }">
+					<origin rpy="0  0  0" xyz="0.097941980 -0.000003641 0.022606835"/>
+					<inertia 
+						ixx="0.022529779"  ixy="-0.000001947"  ixz="0.005438126" 
+						iyy="0.040490272" iyz="0.000000028" 
+						izz="0.059586606" />
+				</xacro:if>
+				<xacro:if value="${ omni_deg == 30 }">
+					<origin rpy="0  0  0" xyz="0.093004592 -0.000003767 0.022606835"/>
+					<inertia 
+						ixx="0.029836761"  ixy="-0.000001989"  ixz="0.005143199" 
+						iyy="0.038129150" iyz="0.000000032" 
+						izz="0.064532466" />
+					</xacro:if>
+				<xacro:if value="${ omni_deg == 45 }">
+					<origin rpy="0  0  0" xyz="0.088469727 -0.000003875 0.022606835"/>
+					<inertia 
+						ixx="0.031190783"  ixy="-0.000001989"  ixz="0.004872244" 
+						iyy="0.036211112" iyz="0.000000035" 
+						izz="0.063968450" />
+				</xacro:if>
+			</inertial>
+
+			<collision >
+				<origin rpy="0  0  0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://strirus_cad_design/stl/body_1_${omni_deg}_part.stl" scale="1 1 1"/>
+				</geometry>
+			</collision>
+			<visual >
+				<origin rpy="0  0  0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://strirus_cad_design/stl/body_1_${omni_deg}_part.stl" scale="1 1 1"/>
+				</geometry>
+				<material name="brown"/>
+			</visual>
+		</link>
+					<!--body 2 part -->
+		<link name="body_2_part">
+			<inertial>
+				<mass value="2.355831379"/>
+				<xacro:if value="${ omni_deg == 0 }">
+					<origin rpy="0  0  0" xyz="0.457805789 0.000005611 0.022369504"/>
+					<inertia 
+						ixx="0.019589608"  ixy="0.000004419"  ixz="0.023997682" 
+						iyy="0.511120252" iyz="0.000000215" 
+						izz="0.527397750" />
+				</xacro:if>
+				<xacro:if value="${ omni_deg == 15 }">
+					<origin rpy="0  0  0" xyz="0.456048764 0.000005747 0.022368636"/>
+					<inertia 
+						ixx="0.022462182"  ixy="0.000004552"  ixz="0.023891220" 
+						iyy="0.507464036" iyz="0.000000211"  
+						izz="0.526614316" />
+				</xacro:if>
+				<xacro:if value="${ omni_deg == 30 }">
+					<origin rpy="0  0  0" xyz="0.461055522 0.000005875 0.022371110"/>
+					<inertia 
+						ixx="0.029769456"  ixy="0.000004675"  ixz="0.024189823" 
+						iyy="0.518172151" iyz="0.000000208" 
+						izz="0.544629121" />
+				</xacro:if>
+				<xacro:if value="${ omni_deg == 45 }">
+					<origin rpy="0  0  0" xyz="0.465654100 0.000005984 0.022373382"/>
+					<inertia 
+						ixx="0.031123748"  ixy="0.000004818"  ixz="0.024464278" 
+						iyy="0.528257872" iyz="0.000000205" 
+						izz="0.556068596" />
+				</xacro:if>
+			</inertial>
+
+			<collision >
+				<origin rpy="0  0  0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://strirus_cad_design/stl/body_2_${str(omni_deg)}_part.stl" scale="1 1 1"/>
+				</geometry>
+			</collision>
+			<visual >
+				<origin rpy="0  0  0" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://strirus_cad_design/stl/body_2_${omni_deg}_part.stl" scale="1 1 1"/>
+				</geometry>
+				<material name="orange"/>
+			</visual>
+		</link>
+	</xacro:macro>
+
+	<xacro:full_body omni_deg="${omni_angle}"/>
+
+	<!-- bridge part -->
+	<!-- brdige 1 part -->
+	<link name="bridge_1_part">
+		<inertial>
+			<mass value="0.093452612"/>
+			<origin rpy="0  0  0" xyz="0.253688724 0.000000000 0.025077504"/>
+			<inertia 
+				ixx="0.000293438"  ixy="0.000000000"  ixz="0.000594486" 
+				iyy="0.006102775" iyz="0.000000000" 
+				izz="0.006245808" />
+		</inertial>
+		<collision >
+			<origin rpy="0  0  0" xyz="0 0 0"/>
+			<geometry>
+				<mesh filename="package://strirus_cad_design/stl/bridge_1_part.stl" scale="1 1 1"/>
+			</geometry>
+		</collision>
+		<visual >
+			<origin rpy="0  0  0" xyz="0 0 0"/>
+			<geometry>
+				<mesh filename="package://strirus_cad_design/stl/bridge_1_part.stl" scale="1 1 1"/>
+			</geometry>
+			<material name="white"/>
+		</visual>
+	</link>
+	<!-- brdige 2 part -->
+	<link name="bridge_2_part">
+		<inertial>
+			<mass value="0.093452612"/>
+			<origin rpy="0  0  0" xyz="0.300311235 0.000000000 0.025089023"/>
+			<inertia 
+				ixx="0.000273936"  ixy="0.000000000"  ixz="0.000704167" 
+				iyy="0.008516604" iyz="0.000000000" 
+				izz="0.008640028" />
+		</inertial>
+		<collision >
+			<origin rpy="0  0  0" xyz="0 0 0"/>
+			<geometry>
+				<mesh filename="package://strirus_cad_design/stl/bridge_2_part.stl" scale="1 1 1"/>
+			</geometry>
+		</collision>
+		<visual >
+			<origin rpy="0  0  0" xyz="0 0 0"/>
+			<geometry>
+				<mesh filename="package://strirus_cad_design/stl/bridge_2_part.stl" scale="1 1 1"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+
+
+	<!-- Joints -->
+	<joint name="bridge_2_part_body_2_part_fixed" type="fixed">
+		<parent link="bridge_2_part"/>
+		<child link="body_2_part"/>
+	</joint>
+
+
+	<xacro:if value="${str(segment_dof) == '0' }">
+		<joint name="bridge_1_part_bridge_2_part_fixed" type="fixed">
+			<parent link="bridge_1_part"/>
+			<child link="bridge_2_part"/>
+		</joint>
+		<joint name="body_1_part_bridge_1_part_fixed" type="fixed">
+			<parent link="body_1_part"/>
+			<child link="bridge_1_part"/>
+		</joint>
+	</xacro:if>
+
+	<xacro:if value="${ segment_dof == '1up' }">
+		<joint name="body_1_part_bridge_1_part_fixed" type="fixed">
+			<parent link="body_1_part"/>
+			<child link="bridge_1_part"/>
+			
+		</joint>
+		<joint name="bridge_1_part_bridge_2_part_revolute" type="revolute">
+			<parent link="bridge_1_part"/>
+			<child link="bridge_2_part"/>
+			<origin rpy="0       0      0" xyz="${dist_origin_bridge_center} 0 ${robot_height_center}"/>
+			<axis xyz="0 1  0"/>
+			<limit effort="30" lower="${-deg2rad*75}" upper="${deg2rad*75}" velocity="5"/>
+			<joint_properties damping="0.0" friction="0.0" />
+		</joint>
+	</xacro:if>
+
+	<xacro:if value="${ segment_dof == '1side' }">
+	</xacro:if>
+
+	<xacro:if value="${ segment_dof == '2' }">
+	</xacro:if>
+</robot>
