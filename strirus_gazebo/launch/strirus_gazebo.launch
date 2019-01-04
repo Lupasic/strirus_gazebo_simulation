@@ -1,7 +1,6 @@
 <launch>
-
     <!-- args for changing robot params -->
-    <!-- simulation  options-->
+    <arg name="use_sim_time" default="true"/>
     <arg name="ideal_motors" default="0" doc="0 - no, 1 - yes"/>
     <arg name="ideal_segment_joint" default="0" doc="0 - no, 1 - yes"/>
     <arg name="leg_fancy_physics" default="0" doc="0 - no, 1 - yes"/>
@@ -41,15 +40,19 @@
 		side_segment_angle:=$(arg side_segment_angle)"/>
 
 
-    <arg name="gui" default="true"/>
-    <arg name="rvizconfig" default="$(find strirus_robot_description)/rviz/static.rviz"/>
+    <!-- Launch the room -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <!--<arg name="world_name" value="$(find strirus_gazebo)/worlds/testing_area.world"/> -->
+        <arg name="paused" value="true"/>
+        <arg name="physics" default="ode"/>
+        <arg name="verbose" default="true"/>'
+        <arg name="gui" value="true"/>
+        <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    </include>
 
-
-    <param name="use_gui" value="$(arg gui)"/>
-
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
-    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
-    <remap from="/joint_states" to="/strirus/joint_states"/>
+    <!-- Spawn a robot into Gazebo -->
+    <!--<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find plastun_description)/urdf/plastun.urdf -urdf -z 0.001 -model plastun" /> -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-urdf -model strirus_gamma -param robot_description"/>
 
 </launch>
