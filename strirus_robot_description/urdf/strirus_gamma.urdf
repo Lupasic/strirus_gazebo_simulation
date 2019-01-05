@@ -41,7 +41,7 @@
   <joint name="base_footprint_body_1_part_fixed" type="fixed">
     <parent link="base_footprint"/>
     <child link="body_1_part"/>
-    <origin rpy="0  0  0" xyz="0 0 0.055"/>
+    <origin rpy="0  0  0" xyz="0 0 0.07"/>
   </joint>
   <!-- /////////////// -->
   <!-- omni_deg in DEG!! not  in rad -->
@@ -49,19 +49,19 @@
   <link name="body_1_part">
     <inertial>
       <mass value="2.388930632"/>
-      <origin rpy="0  0  0" xyz="0.096209300 -0.000003507 -0.002393165"/>
-      <inertia ixx="0.017027739" ixy="-0.000001088" ixz="0.000137008" iyy="0.016226695" iyz="0.000000214" izz="0.032262805"/>
+      <origin rpy="0  0  0" xyz="0.097941980 -0.000003641 -0.002393165"/>
+      <inertia ixx="0.021308871" ixy="-0.000001095" ixz="0.000148655" iyy="0.016353233" iyz="0.000000225" izz="0.036670475"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/body_1_0_part.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/body_1_15_part.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/body_1_0_part.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/body_1_15_part.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -70,19 +70,19 @@
   <link name="body_2_part">
     <inertial>
       <mass value="2.355831379"/>
-      <origin rpy="0  0  0" xyz="0.150804467 0.000005611 -0.002719841"/>
-      <inertia ixx="0.018410893" ixy="-0.000001632" ixz="-0.000135654" iyy="0.016191801" iyz="-0.000000080" izz="0.033648014"/>
+      <origin rpy="0  0  0" xyz="0.149047442 0.000005747 -0.002719841"/>
+      <inertia ixx="0.021283571" ixy="-0.000001623" ixz="-0.000148653" iyy="0.016318351" iyz=" -0.000000091" izz="0.036647243"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/body_2_0_part.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/body_2_15_part.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/body_2_0_part.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/body_2_15_part.stl" scale="1 1 1"/>
       </geometry>
       <material name="orange"/>
     </visual>
@@ -133,7 +133,7 @@
   <joint name="bridge_1_part_bridge_2_part_revolute" type="revolute">
     <parent link="bridge_1_part"/>
     <child link="bridge_2_part"/>
-    <origin rpy="0       0      0" xyz="0.03 0 0"/>
+    <origin rpy="0       -0.0      0" xyz="0.03 0 0"/>
     <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1.308996939" upper="1.308996939" velocity="5"/>
     <joint_properties damping="0.0" friction="0.0"/>
@@ -141,7 +141,7 @@
   <joint name="body_1_part_bridge_1_part_revolute" type="revolute">
     <parent link="body_1_part"/>
     <child link="bridge_1_part"/>
-    <origin rpy="0       0      0" xyz="0.247 0 0"/>
+    <origin rpy="0       0      -0.0" xyz="0.247 0 0"/>
     <axis xyz="0 0  -1"/>
     <limit effort="30" lower="-0.261799387799" upper="0.261799387799" velocity="5"/>
     <joint_properties damping="0.0" friction="0.0"/>
@@ -151,27 +151,22 @@
     <child link="body_2_part"/>
     <origin rpy="0 0 0" xyz="0.03 0 0"/>
   </joint>
-  <!-- 
-            <xacro:property name="angle_for_0_l_leg" value="${angle_for_0_l_leg * deg2rad}"/>
-            <xacro:property name="angle_btw_legs" value="${angle_btw_legs * deg2rad}"/> -->
-  <!-- 		<xacro:property name="angle_coeff_left" value="${(angle_for_0_l_leg + angle_btw_legs * num) % 360 * deg2rad}" />
-                <xacro:property name="angle_coeff_right" value="${-(angle_btw_legs * num) % 360 * deg2rad}" /> -->
   <link name="leg_left_5">
     <inertial>
-      <mass value="0.010307884"/>
-      <origin rpy="0 0 0" xyz="-0.008963344 0 -0.020168668"/>
-      <inertia ixx="0.000004032" ixy="0" ixz="0.000000712" iyy="0.000004993" iyz="0" izz="0.000001071"/>
+      <mass value="0.012706347"/>
+      <origin rpy="0 0 0" xyz="-0.013348671 0 -0.027584119"/>
+      <inertia ixx="0.000007895" ixy="0" ixz="0.000001300" iyy="0.000009763" iyz="0" izz="0.000002004"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/leg_70.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/leg_70.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -179,29 +174,27 @@
   <joint name="leg_left_5_revolute_joint" type="revolute">
     <child link="leg_left_5"/>
     <parent link="body_2_part"/>
-    <origin rpy="0       0      0" xyz="-0.013 0.1515  0"/>
-    <axis xyz="0 1  0"/>
+    <origin rpy="0       0.0        -0.261799387799" xyz="0.042893980876 0.1594607377  0"/>
+    <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1e+100" upper="1e+100" velocity="3.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
-  <!-- 		<xacro:property name="angle_coeff_left" value="${(angle_for_0_l_leg + angle_btw_legs * num) % 360 * deg2rad}" />
-                <xacro:property name="angle_coeff_right" value="${-(angle_btw_legs * num) % 360 * deg2rad}" /> -->
   <link name="leg_left_4">
     <inertial>
-      <mass value="0.010307884"/>
-      <origin rpy="0 0 0" xyz="-0.008963344 0 -0.020168668"/>
-      <inertia ixx="0.000004032" ixy="0" ixz="0.000000712" iyy="0.000004993" iyz="0" izz="0.000001071"/>
+      <mass value="0.012706347"/>
+      <origin rpy="0 0 0" xyz="-0.013348671 0 -0.027584119"/>
+      <inertia ixx="0.000007895" ixy="0" ixz="0.000001300" iyy="0.000009763" iyz="0" izz="0.000002004"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/leg_70.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/leg_70.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -209,29 +202,27 @@
   <joint name="leg_left_4_revolute_joint" type="revolute">
     <child link="leg_left_4"/>
     <parent link="body_2_part"/>
-    <origin rpy="0       0      0" xyz="0.117 0.1345  0"/>
-    <axis xyz="0 1  0"/>
+    <origin rpy="0       0.174532925199        -0.261799387799" xyz="0.148893980876 0.1594607377  0"/>
+    <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1e+100" upper="1e+100" velocity="3.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
-  <!-- 		<xacro:property name="angle_coeff_left" value="${(angle_for_0_l_leg + angle_btw_legs * num) % 360 * deg2rad}" />
-                <xacro:property name="angle_coeff_right" value="${-(angle_btw_legs * num) % 360 * deg2rad}" /> -->
   <link name="leg_left_3">
     <inertial>
-      <mass value="0.010307884"/>
-      <origin rpy="0 0 0" xyz="-0.008963344 0 -0.020168668"/>
-      <inertia ixx="0.000004032" ixy="0" ixz="0.000000712" iyy="0.000004993" iyz="0" izz="0.000001071"/>
+      <mass value="0.012706347"/>
+      <origin rpy="0 0 0" xyz="-0.013348671 0 -0.027584119"/>
+      <inertia ixx="0.000007895" ixy="0" ixz="0.000001300" iyy="0.000009763" iyz="0" izz="0.000002004"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/leg_70.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/leg_70.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -239,29 +230,27 @@
   <joint name="leg_left_3_revolute_joint" type="revolute">
     <child link="leg_left_3"/>
     <parent link="body_2_part"/>
-    <origin rpy="0       0      0" xyz="0.247 0.1515  0"/>
-    <axis xyz="0 1  0"/>
+    <origin rpy="0       0.0        -0.261799387799" xyz="0.254893980876 0.1594607377  0"/>
+    <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1e+100" upper="1e+100" velocity="3.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
-  <!-- 		<xacro:property name="angle_coeff_left" value="${(angle_for_0_l_leg + angle_btw_legs * num) % 360 * deg2rad}" />
-                <xacro:property name="angle_coeff_right" value="${-(angle_btw_legs * num) % 360 * deg2rad}" /> -->
   <link name="leg_left_2">
     <inertial>
-      <mass value="0.010307884"/>
-      <origin rpy="0 0 0" xyz="-0.008963344 0 -0.020168668"/>
-      <inertia ixx="0.000004032" ixy="0" ixz="0.000000712" iyy="0.000004993" iyz="0" izz="0.000001071"/>
+      <mass value="0.012706347"/>
+      <origin rpy="0 0 0" xyz="-0.013348671 0 -0.027584119"/>
+      <inertia ixx="0.000007895" ixy="0" ixz="0.000001300" iyy="0.000009763" iyz="0" izz="0.000002004"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/leg_70.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/leg_70.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -269,29 +258,27 @@
   <joint name="leg_left_2_revolute_joint" type="revolute">
     <child link="leg_left_2"/>
     <parent link="body_1_part"/>
-    <origin rpy="0       0      0" xyz="0.26 0.1345  0"/>
-    <axis xyz="0 1  0"/>
+    <origin rpy="0       0.0        0.261799387799" xyz="0.204106019124 0.1594607377  0"/>
+    <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1e+100" upper="1e+100" velocity="3.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
-  <!-- 		<xacro:property name="angle_coeff_left" value="${(angle_for_0_l_leg + angle_btw_legs * num) % 360 * deg2rad}" />
-                <xacro:property name="angle_coeff_right" value="${-(angle_btw_legs * num) % 360 * deg2rad}" /> -->
   <link name="leg_left_1">
     <inertial>
-      <mass value="0.010307884"/>
-      <origin rpy="0 0 0" xyz="-0.008963344 0 -0.020168668"/>
-      <inertia ixx="0.000004032" ixy="0" ixz="0.000000712" iyy="0.000004993" iyz="0" izz="0.000001071"/>
+      <mass value="0.012706347"/>
+      <origin rpy="0 0 0" xyz="-0.013348671 0 -0.027584119"/>
+      <inertia ixx="0.000007895" ixy="0" ixz="0.000001300" iyy="0.000009763" iyz="0" izz="0.000002004"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/leg_70.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/leg_70.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -299,29 +286,27 @@
   <joint name="leg_left_1_revolute_joint" type="revolute">
     <child link="leg_left_1"/>
     <parent link="body_1_part"/>
-    <origin rpy="0       0      0" xyz="0.13 0.1515  0"/>
-    <axis xyz="0 1  0"/>
+    <origin rpy="0       3.14159265359        0.261799387799" xyz="0.098106019124 0.1594607377  0"/>
+    <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1e+100" upper="1e+100" velocity="3.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
-  <!-- 		<xacro:property name="angle_coeff_left" value="${(angle_for_0_l_leg + angle_btw_legs * num) % 360 * deg2rad}" />
-                <xacro:property name="angle_coeff_right" value="${-(angle_btw_legs * num) % 360 * deg2rad}" /> -->
   <link name="leg_left_0">
     <inertial>
-      <mass value="0.010307884"/>
-      <origin rpy="0 0 0" xyz="-0.008963344 0 -0.020168668"/>
-      <inertia ixx="0.000004032" ixy="0" ixz="0.000000712" iyy="0.000004993" iyz="0" izz="0.000001071"/>
+      <mass value="0.012706347"/>
+      <origin rpy="0 0 0" xyz="-0.013348671 0 -0.027584119"/>
+      <inertia ixx="0.000007895" ixy="0" ixz="0.000001300" iyy="0.000009763" iyz="0" izz="0.000002004"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/leg_70.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/leg_70.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -329,29 +314,27 @@
   <joint name="leg_left_0_revolute_joint" type="revolute">
     <child link="leg_left_0"/>
     <parent link="body_1_part"/>
-    <origin rpy="0       0      0" xyz="0.0 0.1345  0"/>
-    <axis xyz="0 1  0"/>
+    <origin rpy="0       0.0        0.261799387799" xyz="-0.007893980876 0.1594607377  0"/>
+    <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1e+100" upper="1e+100" velocity="3.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
-  <!-- 		<xacro:property name="angle_coeff_left" value="${(angle_for_0_l_leg + angle_btw_legs * num) % 360 * deg2rad}" />
-                <xacro:property name="angle_coeff_right" value="${-(angle_btw_legs * num) % 360 * deg2rad}" /> -->
   <link name="leg_right_5">
     <inertial>
-      <mass value="0.010307884"/>
-      <origin rpy="0 0 0" xyz="-0.008963344 0 -0.020168668"/>
-      <inertia ixx="0.000004032" ixy="0" ixz="0.000000712" iyy="0.000004993" iyz="0" izz="0.000001071"/>
+      <mass value="0.012706347"/>
+      <origin rpy="0 0 0" xyz="-0.013348671 0 -0.027584119"/>
+      <inertia ixx="0.000007895" ixy="0" ixz="0.000001300" iyy="0.000009763" iyz="0" izz="0.000002004"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/leg_70.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/leg_70.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -359,29 +342,27 @@
   <joint name="leg_right_5_revolute_joint" type="revolute">
     <child link="leg_right_5"/>
     <parent link="body_2_part"/>
-    <origin rpy="0       0      0" xyz="-0.013 -0.1515  0"/>
-    <axis xyz="0 1  0"/>
+    <origin rpy="0       0.0        0.261799387799" xyz="0.042893980876 -0.1594607377  0"/>
+    <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1e+100" upper="1e+100" velocity="3.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
-  <!-- 		<xacro:property name="angle_coeff_left" value="${(angle_for_0_l_leg + angle_btw_legs * num) % 360 * deg2rad}" />
-                <xacro:property name="angle_coeff_right" value="${-(angle_btw_legs * num) % 360 * deg2rad}" /> -->
   <link name="leg_right_4">
     <inertial>
-      <mass value="0.010307884"/>
-      <origin rpy="0 0 0" xyz="-0.008963344 0 -0.020168668"/>
-      <inertia ixx="0.000004032" ixy="0" ixz="0.000000712" iyy="0.000004993" iyz="0" izz="0.000001071"/>
+      <mass value="0.012706347"/>
+      <origin rpy="0 0 0" xyz="-0.013348671 0 -0.027584119"/>
+      <inertia ixx="0.000007895" ixy="0" ixz="0.000001300" iyy="0.000009763" iyz="0" izz="0.000002004"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/leg_70.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/leg_70.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -389,29 +370,27 @@
   <joint name="leg_right_4_revolute_joint" type="revolute">
     <child link="leg_right_4"/>
     <parent link="body_2_part"/>
-    <origin rpy="0       0      0" xyz="0.117 -0.1345  0"/>
-    <axis xyz="0 1  0"/>
+    <origin rpy="0       0.0        0.261799387799" xyz="0.148893980876 -0.1594607377  0"/>
+    <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1e+100" upper="1e+100" velocity="3.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
-  <!-- 		<xacro:property name="angle_coeff_left" value="${(angle_for_0_l_leg + angle_btw_legs * num) % 360 * deg2rad}" />
-                <xacro:property name="angle_coeff_right" value="${-(angle_btw_legs * num) % 360 * deg2rad}" /> -->
   <link name="leg_right_3">
     <inertial>
-      <mass value="0.010307884"/>
-      <origin rpy="0 0 0" xyz="-0.008963344 0 -0.020168668"/>
-      <inertia ixx="0.000004032" ixy="0" ixz="0.000000712" iyy="0.000004993" iyz="0" izz="0.000001071"/>
+      <mass value="0.012706347"/>
+      <origin rpy="0 0 0" xyz="-0.013348671 0 -0.027584119"/>
+      <inertia ixx="0.000007895" ixy="0" ixz="0.000001300" iyy="0.000009763" iyz="0" izz="0.000002004"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/leg_70.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/leg_70.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -419,29 +398,27 @@
   <joint name="leg_right_3_revolute_joint" type="revolute">
     <child link="leg_right_3"/>
     <parent link="body_2_part"/>
-    <origin rpy="0       0      0" xyz="0.247 -0.1515  0"/>
-    <axis xyz="0 1  0"/>
+    <origin rpy="0       0.0        0.261799387799" xyz="0.254893980876 -0.1594607377  0"/>
+    <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1e+100" upper="1e+100" velocity="3.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
-  <!-- 		<xacro:property name="angle_coeff_left" value="${(angle_for_0_l_leg + angle_btw_legs * num) % 360 * deg2rad}" />
-                <xacro:property name="angle_coeff_right" value="${-(angle_btw_legs * num) % 360 * deg2rad}" /> -->
   <link name="leg_right_2">
     <inertial>
-      <mass value="0.010307884"/>
-      <origin rpy="0 0 0" xyz="-0.008963344 0 -0.020168668"/>
-      <inertia ixx="0.000004032" ixy="0" ixz="0.000000712" iyy="0.000004993" iyz="0" izz="0.000001071"/>
+      <mass value="0.012706347"/>
+      <origin rpy="0 0 0" xyz="-0.013348671 0 -0.027584119"/>
+      <inertia ixx="0.000007895" ixy="0" ixz="0.000001300" iyy="0.000009763" iyz="0" izz="0.000002004"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/leg_70.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/leg_70.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -449,29 +426,27 @@
   <joint name="leg_right_2_revolute_joint" type="revolute">
     <child link="leg_right_2"/>
     <parent link="body_1_part"/>
-    <origin rpy="0       0      0" xyz="0.26 -0.1345  0"/>
-    <axis xyz="0 1  0"/>
+    <origin rpy="0       0.0872664625997        -0.261799387799" xyz="0.204106019124 -0.1594607377  0"/>
+    <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1e+100" upper="1e+100" velocity="3.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
-  <!-- 		<xacro:property name="angle_coeff_left" value="${(angle_for_0_l_leg + angle_btw_legs * num) % 360 * deg2rad}" />
-                <xacro:property name="angle_coeff_right" value="${-(angle_btw_legs * num) % 360 * deg2rad}" /> -->
   <link name="leg_right_1">
     <inertial>
-      <mass value="0.010307884"/>
-      <origin rpy="0 0 0" xyz="-0.008963344 0 -0.020168668"/>
-      <inertia ixx="0.000004032" ixy="0" ixz="0.000000712" iyy="0.000004993" iyz="0" izz="0.000001071"/>
+      <mass value="0.012706347"/>
+      <origin rpy="0 0 0" xyz="-0.013348671 0 -0.027584119"/>
+      <inertia ixx="0.000007895" ixy="0" ixz="0.000001300" iyy="0.000009763" iyz="0" izz="0.000002004"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/leg_70.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/leg_70.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -479,29 +454,27 @@
   <joint name="leg_right_1_revolute_joint" type="revolute">
     <child link="leg_right_1"/>
     <parent link="body_1_part"/>
-    <origin rpy="0       0      0" xyz="0.13 -0.1515  0"/>
-    <axis xyz="0 1  0"/>
+    <origin rpy="0       0.0        -0.261799387799" xyz="0.098106019124 -0.1594607377  0"/>
+    <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1e+100" upper="1e+100" velocity="3.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
-  <!-- 		<xacro:property name="angle_coeff_left" value="${(angle_for_0_l_leg + angle_btw_legs * num) % 360 * deg2rad}" />
-                <xacro:property name="angle_coeff_right" value="${-(angle_btw_legs * num) % 360 * deg2rad}" /> -->
   <link name="leg_right_0">
     <inertial>
-      <mass value="0.010307884"/>
-      <origin rpy="0 0 0" xyz="-0.008963344 0 -0.020168668"/>
-      <inertia ixx="0.000004032" ixy="0" ixz="0.000000712" iyy="0.000004993" iyz="0" izz="0.000001071"/>
+      <mass value="0.012706347"/>
+      <origin rpy="0 0 0" xyz="-0.013348671 0 -0.027584119"/>
+      <inertia ixx="0.000007895" ixy="0" ixz="0.000001300" iyy="0.000009763" iyz="0" izz="0.000002004"/>
     </inertial>
     <collision>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/collision/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/collision/leg_70.stl" scale="1 1 1"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0  0  0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://strirus_cad_design/stl/visual/leg_55.stl" scale="1 1 1"/>
+        <mesh filename="package://strirus_cad_design/stl/visual/leg_70.stl" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -509,8 +482,8 @@
   <joint name="leg_right_0_revolute_joint" type="revolute">
     <child link="leg_right_0"/>
     <parent link="body_1_part"/>
-    <origin rpy="0       0      0" xyz="0.0 -0.1345  0"/>
-    <axis xyz="0 1  0"/>
+    <origin rpy="0       0.0        -0.261799387799" xyz="-0.007893980876 -0.1594607377  0"/>
+    <axis xyz="0 -1  0"/>
     <limit effort="30" lower="-1e+100" upper="1e+100" velocity="3.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>

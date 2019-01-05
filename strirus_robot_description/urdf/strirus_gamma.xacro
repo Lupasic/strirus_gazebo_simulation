@@ -23,10 +23,10 @@
     <xacro:arg name="leg_fancy_physics" default="0" doc="0 - no, 1 - yes"/>
 
     <!-- omni-directional -->
-    <xacro:arg name="omni_angle" default="0" doc="possible angles 0,15,30,45"/>
+    <xacro:arg name="omni_angle" default="15" doc="possible angles 0,15,30,45"/>
 
     <!-- leg size -->
-    <xacro:arg name="leg_height" default="0" doc="0 - 55, 1 - 70"/>
+    <xacro:arg name="leg_height" default="1" doc="0 - 55, 1 - 70"/>
 
     <!-- angle between legs -->
     <xacro:arg name="angle_btw_legs" default="specific"
@@ -67,7 +67,7 @@
     </xacro:if>
     <xacro:if value="${str(angle_btw_legs) != 'specific'}">
         <xacro:property name="angle_for_0_l_leg" value="$(arg angle_for_0_l_leg)"/>
-        <xacro:property name="angle_for_0_r_leg" default="$(arg angle_for_0_r_leg)"/>
+        <xacro:property name="angle_for_0_r_leg" value="$(arg angle_for_0_r_leg)"/>
     </xacro:if>
     <!-- segmentation -->
     <xacro:property name="segment_dof" value="$(arg segment_dof)"/>
@@ -76,7 +76,7 @@
 
 
     <!-- Needed constants-variables -->
-    <xacro:property name="dist_btw_legs" value="${0.11}"/>
+    <xacro:property name="dist_btw_legs" value="${0.106}"/>
     <xacro:property name="dist_btw_body_origins" value="${0.554}"/>
     <xacro:property name="leg_thickness" value="${0.004}"/>
 
