@@ -6,7 +6,7 @@
     <joint name="base_footprint_body_1_part_fixed" type="fixed">
         <parent link="base_footprint"/>
         <child link="body_1_part"/>
-        <origin rpy="0  0  0" xyz="0 0 ${leg_height}"/>
+        <origin rpy="0  0  0" xyz="0 0 ${leg_height_size}"/>
     </joint>
     <!-- /////////////// -->
 
@@ -186,7 +186,7 @@
             <parent link="bridge_1_part"/>
             <child link="bridge_2_part"/>
             <origin rpy="0       0      0" xyz="${dist_bridge_1_bridge_2} 0 ${0}"/>
-            <axis xyz="0 1  0"/>
+            <axis xyz="0 -1  0"/>
             <limit effort="30" lower="${-deg2rad*75}" upper="${deg2rad*75}" velocity="5"/>
             <joint_properties damping="0.0" friction="0.0"/>
         </joint>
@@ -197,7 +197,7 @@
             <parent link="body_1_part"/>
             <child link="bridge_1_part"/>
             <origin rpy="0       0      0" xyz="${dist_body_1_bridge_1} 0 ${0}"/>
-            <axis xyz="0 0  1"/>
+            <axis xyz="0 0  -1"/>
             <limit effort="30" lower="${-deg2rad*15}" upper="${deg2rad*15}" velocity="5"/>
             <joint_properties damping="0.0" friction="0.0"/>
         </joint>

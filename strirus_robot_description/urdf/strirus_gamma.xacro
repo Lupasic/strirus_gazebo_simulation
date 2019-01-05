@@ -12,6 +12,7 @@
     <xacro:property name="deg2rad" value="${pi / 180}"/>
     <xacro:property name="rad2deg" value="${180 / pi}"/>
     <xacro:property name="number_of_legs" value="${6 - 1}"/>
+    <xacro:property name="amount_of_legs_one_part" value="${3}"/>
     <!-- Constants for simulating -->
     <!-- Xacro arg provides xacro.py file.xacro real_number_of_legs:=12 -->
 
@@ -22,17 +23,18 @@
     <xacro:arg name="leg_fancy_physics" default="0" doc="0 - no, 1 - yes"/>
 
     <!-- omni-directional -->
-    <xacro:arg name="omni_angle" default="15" doc="possible angles 0,15,30,45"/>
+    <xacro:arg name="omni_angle" default="0" doc="possible angles 0,15,30,45"/>
 
     <!-- leg size -->
     <xacro:arg name="leg_height" default="0" doc="0 - 55, 1 - 70"/>
 
     <!-- angle between legs -->
-    <xacro:arg name="angle_btw_legs" default="0"
+    <xacro:arg name="angle_btw_legs" default="specific"
                doc="in degrees, or 'specific' for choosing specific angle for each leg (cclock)"/>
-    <xacro:arg name="offset_btw_legs_wave" default="0" doc="in degrees"/>
-    <xacro:arg name="l_specific_angle_btw_legs" default="[0,0,0,0,0,0]" doc=""/>
-    <xacro:arg name="r_specific_angle_btw_legs" default="[0,0,0,0,0,0]" doc=""/>
+    <xacro:arg name="angle_for_0_l_leg" default="0" doc="in degrees"/>
+    <xacro:arg name="angle_for_0_r_leg" default="4" doc="in degrees"/>          
+    <xacro:arg name="l_specific_angle_btw_legs" default="0,180,0,0,10,0" doc=""/>
+    <xacro:arg name="r_specific_angle_btw_legs" default="0,0,5,0,0,0" doc=""/>
 
     <!-- segmentation -->
     <xacro:arg name="segment_dof" default="2" doc="possible '0','1up','1side','2'"/>
@@ -50,10 +52,10 @@
     <!-- leg size -->
     <xacro:property name="leg_height" value="$(arg leg_height)"/>
     <xacro:if value="${leg_height == 1}">
-        <xacro:property name="leg_height" value="${0.07}"/>
+        <xacro:property name="leg_height_size" value="${0.07}"/>
     </xacro:if>
     <xacro:if value="${leg_height == 0}">
-        <xacro:property name="leg_height" value="${0.055}"/>
+        <xacro:property name="leg_height_size" value="${0.055}"/>
     </xacro:if>
 
     <!-- angle between legs -->
@@ -62,10 +64,10 @@
     <xacro:if value="${str(angle_btw_legs) == 'specific'}">
         <xacro:property name="l_specific_angle_btw_legs" value="$(arg l_specific_angle_btw_legs)"/>
         <xacro:property name="r_specific_angle_btw_legs" value="$(arg r_specific_angle_btw_legs)"/>
-        <xacro:property name="offset_btw_legs_wave" value="0"/>
     </xacro:if>
     <xacro:if value="${str(angle_btw_legs) != 'specific'}">
-        <xacro:property name="offset_btw_legs_wave" value="$(arg offset_btw_legs_wave)"/>
+        <xacro:property name="angle_for_0_l_leg" value="$(arg angle_for_0_l_leg)"/>
+        <xacro:property name="angle_for_0_r_leg" default="$(arg angle_for_0_r_leg)"/>
     </xacro:if>
     <!-- segmentation -->
     <xacro:property name="segment_dof" value="$(arg segment_dof)"/>
@@ -74,8 +76,9 @@
 
 
     <!-- Needed constants-variables -->
-    <xacro:property name="dist_btw_legs" value="${0.13}"/>
+    <xacro:property name="dist_btw_legs" value="${0.11}"/>
     <xacro:property name="dist_btw_body_origins" value="${0.554}"/>
+    <xacro:property name="leg_thickness" value="${0.004}"/>
 
     <xacro:property name="dist_body_1_bridge_1" value="${0.247}"/>
     <xacro:property name="dist_bridge_1_bridge_2" value="${0.03}"/>

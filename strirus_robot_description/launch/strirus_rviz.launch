@@ -2,44 +2,8 @@
 
     <!-- args for changing robot params -->
     <!-- simulation  options-->
-    <arg name="ideal_motors" default="0" doc="0 - no, 1 - yes"/>
-    <arg name="ideal_segment_joint" default="0" doc="0 - no, 1 - yes"/>
-    <arg name="leg_fancy_physics" default="0" doc="0 - no, 1 - yes"/>
 
-    <!-- omni-directional -->
-    <arg name="omni_angle" default="15" doc="possible angles 0,15,30,45"/>
-
-    <!-- leg size -->
-    <arg name="leg_height" default="0" doc="0 - 55, 1 - 70"/>
-
-    <!-- angle between legs -->
-    <arg name="angle_btw_legs" default="0"
-         doc="in degrees, or 'specific' for choosing specific angle for each leg (cclock)"/>
-    <arg name="offset_btw_legs_wave" default="0" doc="in degrees"/>
-    <arg name="l_specific_angle_btw_legs" default="[0,0,0,0,0,0]" doc=""/>
-    <arg name="r_specific_angle_btw_legs" default="[0,0,0,0,0,0]" doc=""/>
-
-    <!-- segmentation -->
-    <arg name="segment_dof" default="2" doc="possible '0','1up','1side','2'"/>
-    <arg name="up_segment_angle" default="0" doc="in degrees"/>
-    <arg name="side_segment_angle" default="0" doc="in degrees"/>
-
-
-    <param name="robot_description"
-           command="$(find xacro)/xacro --inorder '$(find strirus_robot_description)/urdf/strirus_gamma.xacro'
-		ideal_motors:=$(arg ideal_motors) 
-		ideal_segment_joint:=$(arg ideal_segment_joint) 
-		leg_fancy_physics:=$(arg leg_fancy_physics)
-		omni_angle:=$(arg omni_angle) 
-		leg_height:=$(arg leg_height) 
-		angle_btw_legs:=$(arg angle_btw_legs)
-		offset_btw_legs_wave:=$(arg offset_btw_legs_wave) 
-		l_specific_angle_btw_legs:=$(arg l_specific_angle_btw_legs) 
-		r_specific_angle_btw_legs:=$(arg r_specific_angle_btw_legs)
-		segment_dof:=$(arg segment_dof) 
-		up_segment_angle:=$(arg up_segment_angle) 
-		side_segment_angle:=$(arg side_segment_angle)"/>
-
+	<include file="$(find strirus_robot_description)/launch/robot_description_gen.xml"/>
 
     <arg name="gui" default="true"/>
     <arg name="rvizconfig" default="$(find strirus_robot_description)/rviz/static.rviz"/>
