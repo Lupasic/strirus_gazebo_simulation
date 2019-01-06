@@ -18,32 +18,44 @@
 
 
     <!-- simulation  options-->
-    <xacro:arg name="ideal_motors" default="0" doc="0 - no, 1 - yes"/>
-    <xacro:arg name="ideal_segment_joint" default="0" doc="0 - no, 1 - yes"/>
-    <xacro:arg name="leg_fancy_physics" default="0" doc="0 - no, 1 - yes"/>
+    <!-- doc="0 - no, 1 - yes" -->
+    <xacro:arg name="ideal_leg_motors" default="1"/>
+    <!-- doc="0 - no, 1 - yes" -->
+    <xacro:arg name="ideal_segment_joint" default="1"/>
+    <!-- doc="0 - no, 1 - yes" -->
+    <xacro:arg name="leg_fancy_physics" default="0"/>
 
     <!-- omni-directional -->
-    <xacro:arg name="omni_angle" default="15" doc="possible angles 0,15,30,45"/>
+    <!-- doc="possible angles 0,15,30,45" -->
+    <xacro:arg name="omni_angle" default="15"/>
 
     <!-- leg size -->
-    <xacro:arg name="leg_height" default="1" doc="0 - 55, 1 - 70"/>
+    <!--  doc="0 - 55, 1 - 70" -->
+    <xacro:arg name="leg_height" default="1"/>
 
     <!-- angle between legs -->
-    <xacro:arg name="angle_btw_legs" default="specific"
-               doc="in degrees, or 'specific' for choosing specific angle for each leg (cclock)"/>
-    <xacro:arg name="angle_for_0_l_leg" default="0" doc="in degrees"/>
-    <xacro:arg name="angle_for_0_r_leg" default="4" doc="in degrees"/>          
-    <xacro:arg name="l_specific_angle_btw_legs" default="0,180,0,0,10,0" doc=""/>
-    <xacro:arg name="r_specific_angle_btw_legs" default="0,0,5,0,0,0" doc=""/>
+    <!--  doc="in degrees, or 'specific' for choosing specific angle for each leg (cclock)" -->
+    <xacro:arg name="angle_btw_legs" default="120"/>
+    <!-- doc="in degrees" -->
+    <xacro:arg name="angle_for_0_l_leg" default="0"/>
+    <!-- doc="in degrees" -->
+    <xacro:arg name="angle_for_0_r_leg" default="0"/>
+    <!-- any angle sequence -->
+    <xacro:arg name="l_specific_angle_btw_legs" default="0,180,0,0,10,0"/>
+    <!-- any angle sequence -->
+    <xacro:arg name="r_specific_angle_btw_legs" default="0,0,5,0,0,0"/>
 
     <!-- segmentation -->
-    <xacro:arg name="segment_dof" default="2" doc="possible '0','1up','1side','2'"/>
-    <xacro:arg name="up_segment_angle" default="0" doc="in degrees"/>
-    <xacro:arg name="side_segment_angle" default="0" doc="in degrees"/>
+    <!-- doc="possible '0','1up','1side','2'" -->
+    <xacro:arg name="segment_dof" default="2"/>
+    <!--  doc="in degrees" -->
+    <xacro:arg name="up_segment_angle" default="0"/>
+    <!--  doc="in degrees" -->
+    <xacro:arg name="side_segment_angle" default="0"/>
 
     <!-- arg to properties with converting to rad if it is needed -->
     <!-- simulation  options-->
-    <xacro:property name="ideal_motors" value="$(arg ideal_motors)"/>
+    <xacro:property name="ideal_leg_motors" value="$(arg ideal_leg_motors)"/>
     <xacro:property name="ideal_segment_joint" value="$(arg ideal_segment_joint)"/>
     <xacro:property name="leg_fancy_physics" value="$(arg leg_fancy_physics)"/>
     <!-- omni-directional -->
@@ -91,8 +103,6 @@
     <!-- <xacro:include filename="$(find strirus_robot_description)/urdf/strirus_plugins.gazebo" /> -->
     <!-- Import Rviz colors -->
     <xacro:include filename="$(find strirus_robot_description)/urdf/materials.xacro"/>
-
-
     <xacro:include filename="$(find strirus_robot_description)/urdf/strirus_gamma_body_bridge.xacro"/>
     <xacro:include filename="$(find strirus_robot_description)/urdf/strirus_gamma_legs.xacro"/>
 

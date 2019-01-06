@@ -1,12 +1,11 @@
 <launch>
 
-    <!-- args for changing robot params -->
     <!-- simulation  options-->
-
-	<include file="$(find strirus_robot_description)/launch/robot_description_gen.xml"/>
-
     <arg name="gui" default="true"/>
     <arg name="rvizconfig" default="$(find strirus_robot_description)/rviz/static.rviz"/>
+
+
+	<include file="$(find strirus_robot_description)/launch/robot_description_gen.xml"/>
 
 
     <param name="use_gui" value="$(arg gui)"/>
