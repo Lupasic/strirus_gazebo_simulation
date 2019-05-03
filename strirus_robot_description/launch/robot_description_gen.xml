@@ -4,7 +4,7 @@
     <arg name="leg_fancy_physics" default="0" doc="0 - no, 1 - yes"/>
 
     <!-- omni-directional -->
-    <arg name="omni_angle" default="15" doc="possible angles 0,15,30,45"/>
+    <arg name="omni_angle" default="30" doc="possible angles 0,15,30,45"/>
 
     <!-- leg size -->
     <arg name="leg_height" default="1" doc="0 - 55, 1 - 70"/>
@@ -18,7 +18,7 @@
    <arg name="r_specific_angle_btw_legs" default="0,0,0,0,0,0" doc=""/>
 
    <!-- segmentation -->
-   <arg name="segment_dof" default="0" doc="possible '0','1up','1side','2'"/>
+   <arg name="segment_dof" default="2" doc="possible '0','1up','1side','2'"/>
    <arg name="up_segment_angle" default="0" doc="in degrees"/>
    <arg name="side_segment_angle" default="0" doc="in degrees"/>
 
@@ -37,5 +37,6 @@
      r_specific_angle_btw_legs:=$(arg r_specific_angle_btw_legs)
      segment_dof:=$(arg segment_dof) 
      up_segment_angle:=$(arg up_segment_angle) 
-     side_segment_angle:=$(arg side_segment_angle)" />
+     side_segment_angle:=$(arg side_segment_angle)"/>
+   
 </launch>

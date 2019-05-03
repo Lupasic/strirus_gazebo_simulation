@@ -98,7 +98,7 @@
             </xacro:if>
 
             <axis xyz="0 -1  0"/>
-            <limit effort="1.5" lower="-1e+100" upper="1e+100" velocity="3.0"/>
+            <limit effort="1.5" lower="-1e+5" upper="1e+5" velocity="3.0"/>
             <xacro:if value="${ideal_leg_motors == 1}">
                 <joint_properties damping="0.0" friction="0.0"/>
             </xacro:if>
