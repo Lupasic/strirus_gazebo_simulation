@@ -4,7 +4,7 @@
     <arg name="leg_fancy_physics" default="0" doc="0 - no, 1 - yes"/>
 
     <!-- omni-directional -->
-    <arg name="omni_angle" default="30" doc="possible angles 0,15,30,45"/>
+    <arg name="omni_angle" default="15" doc="possible angles 0,15,30,45"/>
 
     <!-- leg size -->
     <arg name="leg_height" default="1" doc="0 - 55, 1 - 70"/>

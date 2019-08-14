@@ -110,5 +110,6 @@
     <xacro:include filename="$(find strirus_robot_description)/urdf/materials.xacro"/>
     <xacro:include filename="$(find strirus_robot_description)/urdf/strirus_gamma_body_bridge.xacro"/>
     <xacro:include filename="$(find strirus_robot_description)/urdf/strirus_gamma_legs.xacro"/>
+    <xacro:include filename="$(find strirus_robot_description)/urdf/strirus_gamma_gazebo.gazebo"/>
 
 </robot>

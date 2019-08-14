@@ -59,6 +59,23 @@
                 <material name="white"/>
             </visual>
         </link>
+
+        <link name="tof_camera_1">
+        </link>
+        <joint name="body_1_part_tof_camera_1_fixed" type="fixed">
+            <parent link="body_1_part"/>
+            <child link="tof_camera_1"/>
+            <origin rpy="0  0  ${pi}" xyz="-0.0375 0 0"/>
+        </joint>
+
+        <link name="imu_1">
+        </link>
+        <joint name="body_1_part_imu_1_fixed" type="fixed">
+            <parent link="body_1_part"/>
+            <child link="imu_1"/>
+            <origin rpy="0  0  0" xyz="0 0 0"/>
+        </joint>
+
         <!--body 2 part -->
         <link name="body_2_part">
             <inertial>
@@ -108,6 +125,21 @@
             </visual>
         </link>
     </xacro:macro>
+
+    <link name="tof_camera_2"/>
+    <joint name="body_2_part_tof_camera_2_fixed" type="fixed">
+        <parent link="body_2_part"/>
+        <child link="tof_camera_2"/>
+        <origin rpy="0  0  0" xyz="0.2845 0 0"/>
+    </joint>
+
+    <link name="imu_2"/>
+    <joint name="body_2_part_imu_2_fixed" type="fixed">
+        <parent link="body_2_part"/>
+        <child link="imu_2"/>
+        <origin rpy="0  0  0" xyz="0.247 0 0"/>
+    </joint>
+
 
     <xacro:full_body omni_deg="${omni_angle}"/>
 
