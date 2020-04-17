@@ -1,11 +1,6 @@
 <?xml version="1.0"?>
 <robot name="strirus_gamma" xmlns:xacro="http://www.ros.org/wiki/xacro">
-
-    <mujoco>
-	<!-- if it doesn't work, try this and put the value by your own
-		$(find strirus_cad_design)/stl/collision--> 
-        <compiler meshdir="../../../../strirus_cad_design/stl/collision/" balanceinertia="true" inertiafromgeom="false" convexhull="false" fusestatic="false"/>
-    </mujoco>
+    
     <gazebo>
         <self_collide>1</self_collide>
     </gazebo>
