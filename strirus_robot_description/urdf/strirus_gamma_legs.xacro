@@ -103,7 +103,7 @@
                 <joint_properties damping="0.0" friction="0.0"/>
             </xacro:if>
       </joint>
-      <!--===================== Leg ytansmission description =====================-->
+      <!--===================== Leg transmission description =====================-->
       <transmission name="tran_${num}">
         <type>transmission_interface/SimpleTransmission</type>
           <joint name="leg_${prefix}_${num}_revolute_joint">
