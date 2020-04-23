@@ -7,6 +7,7 @@
     <arg name="omni_angle" default="15" doc="possible angles 0,15,30,45"/>
 
     <!-- leg size -->
+    <!-- size -->
     <arg name="leg_height" default="1" doc="0 - 55, 1 - 70"/>
 
     <!-- angle between legs -->
@@ -18,7 +19,8 @@
    <arg name="r_specific_angle_btw_legs" default="0,0,0,0,0,0" doc=""/>
 
    <!-- segmentation -->
-   <arg name="segment_dof" default="2" doc="possible '0','1up','1side','2'"/>
+   <!-- Put 0 dof-->
+   <arg name="segment_dof" default="0" doc="possible '0','1up','1side','2'"/>
    <arg name="up_segment_angle" default="0" doc="in degrees"/>
    <arg name="side_segment_angle" default="0" doc="in degrees"/>
 
