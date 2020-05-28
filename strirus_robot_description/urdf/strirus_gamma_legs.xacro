@@ -163,4 +163,5 @@
     </xacro:macro>
 
     <xacro:create_legs prefix="left" side="1" number="${number_of_legs}" angle_seq="${angle_seq_l_leg}"/>
-    <xacro
+    <xacro:create_legs prefix="right" side="-1" number="${number_of_legs}" angle_seq="${angle_seq_r_leg}"/>
+</robot>
