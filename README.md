@@ -17,15 +17,14 @@
 **Run Python script for gamepad control**:
 - ```$ python joy_control.py``` 
 
-
 ## Needed packages
-
-TODO
-
+- [Joy2ROS package](http://wiki.ros.org/joy/Tutorials/ConfiguringALinuxJoystick)
+- [ROS control package](http://wiki.ros.org/ros_control)
 ## Launch files
 
-TODO
-
+- ```strirus_gazebo.launch```
+- ```strirus_control.launch```
+- ```strirus_rviz.launch```
 
 [**Superpoject github link**](https://github.com/Lupasic/strirus_full)
 
