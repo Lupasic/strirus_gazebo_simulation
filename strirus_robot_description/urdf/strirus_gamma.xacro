@@ -27,7 +27,7 @@
 
     <!-- omni-directional -->
     <!-- doc="possible angles 0,15,30,45" -->
-    <xacro:arg name="omni_angle" default="30"/>
+    <xacro:arg name="omni_angle" default="45"/>
 
     <!-- leg size -->
     <!--  doc="0 - 55, 1 - 70" -->
@@ -41,9 +41,9 @@
     <!-- doc="in degrees" -->
     <xacro:arg name="angle_for_0_r_leg" default="0"/>
     <!-- any angle sequence -->
-    <xacro:arg name="l_specific_angle_btw_legs" default="0,180,0,0,10,0"/>
+    <xacro:arg name="l_specific_angle_btw_legs" default="0,0,0,0,0,0"/>
     <!-- any angle sequence -->
-    <xacro:arg name="r_specific_angle_btw_legs" default="0,0,5,0,0,0"/>
+    <xacro:arg name="r_specific_angle_btw_legs" default="0,0,0,0,0,0"/>
 
     <!-- segmentation -->
     <!-- doc="possible '0','1up','1side','2'" -->
